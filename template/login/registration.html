@@ -1,0 +1,14 @@
+{% extends 'login/base.html' %}
+
+{%block bodyblock%}
+    <h1>Registration</h1>
+    {% if register %}
+        <div class="alert alert-success"> Save Succesfully</div>
+    {% endif %}
+    <form enctype="multipart/form-data" method="POST">
+        {{ LoginForm.as_p }}
+        {{ UserForm.as_p }}
+        {% csrf_token %}
+        <input class="btn btn-success" type="submit" value="Save">
+    </form>
+{% endblock%}
